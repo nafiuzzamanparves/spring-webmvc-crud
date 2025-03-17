@@ -7,9 +7,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 @Configuration
-public class Config {
+public class JacksonConfig {
 	@Bean
 	public ObjectMapper objectMapper() {
-		return new ObjectMapper().registerModule(new JavaTimeModule());
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.registerModule(new JavaTimeModule());
+		objectMapper.findAndRegisterModules();
+		return objectMapper;
 	}
 }

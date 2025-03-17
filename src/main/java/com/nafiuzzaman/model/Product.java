@@ -2,11 +2,14 @@ package com.nafiuzzaman.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Product {
 	private Long id;
 	private String name;
 	private double price;
 	private int quantity;
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate purchaseDate;
 	private LocalDate sellDate;
 	private double amount;

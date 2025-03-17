@@ -26,8 +26,16 @@ public class ProductService {
 		productRepository.save(product);
 	}
 
+	public Product saveAndRetrieve(Product product) {
+		return productRepository.saveAndRetrieve(product);
+	}
+
 	public void updateProduct(Product product) {
 		productRepository.update(product);
+	}
+
+	public Product updateProductAndRetrieve(Product product) {
+		return productRepository.updateAndRetrieve(product);
 	}
 
 	public void deleteProduct(Long id) {
